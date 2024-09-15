@@ -17,7 +17,7 @@
 
 <body class="">
 
-  <x-navbar.guest />
+  <x-navbar.app />
   <main>
     @yield('content')
   </main>
