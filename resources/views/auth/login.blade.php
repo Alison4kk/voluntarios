@@ -2,27 +2,31 @@
 @section('title', 'Entrar')
 @section('content')
 
-    <main class="form-signin w-100 m-auto">
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <x-bladewind::centered-content class="max-w-[500px] w-full">
 
-            <h1 class="h3 mb-3 fw-normal">Entrar</h1>
-            <hr>
-            <div class="d-flex flex-column gap-2 mb-3">
-                <x-form-input name="email" :old-value="true" type="email" placeholder="Email" />
-                <x-form-input name="password" type="password" placeholder="Senha" />
-            </div>
+        <x-bladewind::card class="p-3 ">
 
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="remember" value="remember-me"> Manter conectado
-                </label>
-            </div>
-            <div class="d-flex gap-2">
-                <a href="{{ url('/') }}" class="w-100 btn btn-light" type="submit">Voltar</a>
-                <button class="w-100 btn  btn-primary" type="submit">Entrar</button>
-            </div>
-            <p class="mt-5 mb-3 text-muted">&copy; 2024</p>
-        </form>
-    </main>
+            <form method="POST" action="{{ route('login') }}">
+                @csrf
+
+                <h1 class="my-2 text-2xl">Entrar</h1>
+                <x-input name="email" type="email" required="true" label="Email" value="{{ old('email') }}" />
+                <x-input name="password" label="Senha" type="password" required="true" />
+
+                <div class="text-center">
+                    <a href="/">
+                        <x-bladewind::button name="btn-save" has_spinner="true" type="secondary" class="mt-3">
+                            Voltar
+                        </x-bladewind::button>
+                    </a>
+                    <x-bladewind::button name="btn-save" has_spinner="true" type="primary" can_submit="true" class="mt-3">
+                        Entrar
+                    </x-bladewind::button>
+                </div>
+
+            </form>
+
+        </x-bladewind::card>
+
+    </x-bladewind::centered-content>
 @endsection
