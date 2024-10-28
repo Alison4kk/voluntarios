@@ -1,10 +1,7 @@
-@extends('layouts.guest')
+@extends('layouts.app')
 @section('title', 'Inicio')
 @section('content')
 
-<div class="container">
-  <h1>Murilo gay</h1>
+  Murilo Gay
 
-</div>
-   
 @endsection
