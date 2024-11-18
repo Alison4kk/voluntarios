@@ -4,7 +4,8 @@
 
 <div class="container">
 <x-bladewind::centered-content class="max-w-[800px] w-full">
-        <form method="GET" class="signup-form">
+        <form method="POST" action="{{ route('voluntario.store') }}" class="signup-form">
+         @csrf
             <h1 class="my-2 text-2xl font-light text-blue-900/80">Perfil do Voluntário</h1>
             <p class="mt-3 mb-6 text-blue-900/80 text-sm">
                 Preencha os campos a seguir para ser voluntário.
@@ -12,14 +13,16 @@
 
             <div id="section-personal">
                 <h2 class="my-2 text-xl text-blue-900/80">Dados Gerais</h2>
-                <x-bladewind::input name="nomeCompleto" required="true" label="Nome Completo" error_message="Você precisará inserir seu nome completo" />
+                <x-bladewind::input name="nome" required="true" label="Nome Completo" error_message="Você precisará inserir seu nome completo" />
+
                 <div class="flex gap-4">
-                    <x-bladewind::input name="email" required="true" label="Email" />
+                    <x-bladewind::input name="email" label="Email" error_message="{{ $errors->first('email') }}" />
+
 
                     <x-bladewind::input name="Telefone" label="Telefone" numeric="true" />
                 </div>
 
-                <x-bladewind::textarea required="true" name="descricao" error_message="Escreva algo sobre você e seus serviços" show_error_inline="true" label="Descrição"></x-bladewind::textarea>
+                <x-bladewind::textarea required="true" required="true" name="descricao" error_message="Escreva algo sobre você e seus serviços" show_error_inline="true" label="Descrição"></x-bladewind::textarea>
 
                 <div class="text-center">
                     <x-bladewind::button name="btn-next" has_spinner="true" type="primary" class="mt-3" onclick="showAddressSection(event)">
@@ -39,7 +42,7 @@
                 ?>    
                 <x-bladewind::select name="estados" label_key="estado" value_key="sigla" placeholder="Estado" :data="$estados" />
                 <x-bladewind::input name="cidade" label="Cidade" required="true"/>
-                <x-bladewind::input name="logradouro" label="Logradouro" required="true"/>
+                <x-bladewind::input name="logradouro" label="Logradouro"/>
                 <x-bladewind::input name="bairro" label="Bairro" />
                 <x-bladewind::input name="numero" label="Número" />
                 <x-bladewind::input name="complemento" label="Complemento" />
