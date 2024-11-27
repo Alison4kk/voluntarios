@@ -12,7 +12,8 @@
     <link href="{{ asset('vendor/bladewind/css/bladewind-ui.min.css') }}" rel="stylesheet" />
     <script src="{{ asset('vendor/bladewind/js/helpers.js') }}"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -20,9 +21,10 @@
 </head>
 
 <body class="bg-gray-100">
-  <x-navbar />
-  <div class="container max-w-7xl mx-auto mt-4 px-6">
-    @yield('content')
-  </div>
+    <x-navbar />
+    <div class="container max-w-7xl mx-auto mt-4 px-6">
+        @yield('content')
+    </div>
 </body>
+
 </html>

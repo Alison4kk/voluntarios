@@ -4,13 +4,13 @@ return [
     'name' => 'VoluntaRios',
     'manifest' => [
         'name' => env('APP_NAME', 'VoluntaRios'),
-        'short_name' => 'VT',
+        'short_name' => 'VoluntaRios',
         'start_url' => '/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
         'display' => 'standalone',
         'orientation'=> 'any',
-        'status_bar'=> 'black',
+        'status_bar'=> 'black', 
         'icons' => [
             '72x72' => [
                 'path' => '/images/icons/icon-72x72.png',
@@ -46,16 +46,16 @@ return [
             ],
         ],
         'splash' => [
-            '640x1136' => '/images/icons/splash-640x1136.png',
-            '750x1334' => '/images/icons/splash-750x1334.png',
-            '828x1792' => '/images/icons/splash-828x1792.png',
-            '1125x2436' => '/images/icons/splash-1125x2436.png',
-            '1242x2208' => '/images/icons/splash-1242x2208.png',
-            '1242x2688' => '/images/icons/splash-1242x2688.png',
-            '1536x2048' => '/images/icons/splash-1536x2048.png',
-            '1668x2224' => '/images/icons/splash-1668x2224.png',
-            '1668x2388' => '/images/icons/splash-1668x2388.png',
-            '2048x2732' => '/images/icons/splash-2048x2732.png',
+            '640x1136' => '/images/icons/apple-splash-640-1136.png',
+            '750x1334' => '/images/icons/apple-splash-750-1334.png',
+            '828x1792' => '/images/icons/apple-splash-828-1792.png',
+            '1125x2436' => '/images/icons/apple-splash-1125-2436.png',
+            '1242x2208' => '/images/icons/apple-splash-1242-2208.png',
+            '1242x2688' => '/images/icons/apple-splash-1242-2688.png',
+            '1536x2048' => '/images/icons/apple-splash-1536-2048.png',
+            '1668x2224' => '/images/icons/apple-splash-1668-2224.png',
+            '1668x2388' => '/images/icons/apple-splash-1668-2388.png',
+            '2048x2732' => '/images/icons/apple-splash-2048-2732.png',
         ],
         'custom' => []
     ]
