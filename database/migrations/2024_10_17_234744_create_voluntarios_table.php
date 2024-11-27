@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('voluntarios', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
             $table->string('nome');
             $table->text('descricao');
             $table->string('whatsapp')->nullable();

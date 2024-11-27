@@ -10,6 +10,7 @@ class Voluntario extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'nome',
         'descricao',
         'whatsapp',

@@ -1,8 +1,9 @@
 <div
     class="w-full z-40 py-4 px-6 bg-white/90 shadow-2xl shadow-indigo-100 dark:shadow-dark-800/30 border-b border-slate-300/70 dark:border-dark-600/70 dark:bg-dark-700/80">
     <div class="max-w-7xl mx-auto">
-        <div class="flex items-center justify-between flex-wrap">
+        <div class="flex justify-center items-center md:justify-between gap-5 flex-wrap">
             <x-logo></x-logo>
+
             <div class="flex justify-end items-center space-x-5">
 
                 @guest
@@ -29,8 +30,18 @@
                             </div>
                         </x-slot:trigger>
                         <x-bladewind::dropmenu-item>
+                            <a href="{{ route('home.start') }}">
+                                Inicio
+                            </a>
+                        </x-bladewind::dropmenu-item>
+                        <x-bladewind::dropmenu-item>
+                            <a href="{{ route('dashboard') }}">
+                                Meu Perfil
+                            </a>
+                        </x-bladewind::dropmenu-item>
+                        <x-bladewind::dropmenu-item>
                             <a href="{{ route('logout-get') }}">
-                              Sair
+                                Sair
                             </a>
                         </x-bladewind::dropmenu-item>
                     </x-bladewind::dropmenu>

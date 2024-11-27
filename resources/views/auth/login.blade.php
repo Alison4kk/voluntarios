@@ -3,6 +3,9 @@
 @section('content')
 
     <x-bladewind::centered-content class="max-w-[500px] w-full">
+        <div class="flex justify-center mb-10">
+            <img src="images/logo.png" class="max-w-[150px]" alt="">
+        </div>
 
         <x-bladewind::card class="p-3 ">
 

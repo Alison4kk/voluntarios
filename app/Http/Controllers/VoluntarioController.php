@@ -19,7 +19,23 @@ class VoluntarioController extends Controller
     }
 
     public function store(Request $request) {
+
+          $request->validate([
+            'nome' => 'required',
+            'descricao' => 'required',
+            'whatsapp' => 'nullable|numeric',
+            'telefone' => 'nullable|numeric',
+            'email' => 'nullable|email',
+            'bairro' => 'nullable',
+            'cidade' => 'required',
+            'estado' => 'required',
+            'logradouro' => 'nullable',
+            'numero' => 'nullable|numeric',
+            'complemento' => 'nullable'
+        ]);
+
         $data = [
+            'user_id' => auth()->user()->id,
             'nome' => $request->input('nome'),
             'descricao' => $request->input('descricao'),
             'whatsapp' => $request->input('whatsapp'),
@@ -33,8 +49,21 @@ class VoluntarioController extends Controller
             'complemento' => $request->input('complemento')
         ];
 
-        $this->Voluntario->create($data)->id;
 
+
+        /**
+         * @var Voluntario
+         */
+        $voluntario = Voluntario::where('user_id', auth()->user()->id)->first();
+
+
+        if (!$voluntario) {
+          $voluntario = new Voluntario($data);
+        }
+
+
+        $voluntario->fill($data)->save();
+        
         return redirect()
         ->route('dashboard')
         ->with('success', 'Voluntário cadastrado com sucesso!');

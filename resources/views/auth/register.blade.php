@@ -5,12 +5,16 @@
 
     <x-bladewind::centered-content class="max-w-[500px] w-full">
 
+        <div class="flex justify-center mb-10">
+          <img src="images/logo.png" class="max-w-[150px]" alt="">
+        </div>
+
         <x-bladewind::card class="p-3 ">
 
             <form method="POST" action="{{ route('register') }}">
                 @csrf
 
-                <h1 class="my-2 text-2xl">Nova Conta</h1>
+                <h1 class="my-2 mb-5 text-2xl">Nova Conta</h1>
 
                 <x-input name="name" type="text" required="true" label="Nome Completo" value="{{ old('name') }}" />
                 <x-input name="email" type="email" required="true" label="Email" value="{{ old('email') }}" />
