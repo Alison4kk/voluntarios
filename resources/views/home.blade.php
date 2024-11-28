@@ -54,7 +54,7 @@
                             @if (strlen($voluntario->whatsapp) > 0)
                                 <div class="text-base"> <x-bladewind::icon dir="images/icons/" name="whatsapp-icon" class="p-1" />
                                     <a class="text-sky-400 hover:underline" target="_blank"
-                                        href="https://wa.me/55{{ $voluntario->whatsapp }}?text=Ol%C3%A1%20estou%20interessado%20no%20seu%20trabalho!">
+                                        href="https://wa.me/55{{ $voluntario->whatsappSomenteNumero }}?text=Ol%C3%A1%20estou%20interessado%20no%20seu%20trabalho!">
                                         {{ $voluntario->whatsapp }}
                                     </a>
                                 </div>

@@ -24,20 +24,20 @@
                     <h2 class="my-2 text-xl text-blue-900/80">Dados Gerais</h2>
                     <x-input name="nome" required="true" label="Nome Completo"
                         error_message="Você precisará inserir seu nome completo"
-                        value="{{ old('nome') ?? $voluntario->nome }}" />
+                        value="{{ old('nome') ?? $voluntario?->nome }}" />
 
                     <x-input name="email" label="Email" error_message="{{ $errors->first('email') }}"
-                        value="{{ old('email') ?? $voluntario->email }}" />
+                        value="{{ old('email') ?? $voluntario?->email }}" />
                     <div class="flex gap-4">
                         <x-input name="telefone" label="Telefone" numeric="true"
-                            value="{{ old('telefone') ?? $voluntario->telefone }}" />
+                            value="{{ old('telefone') ?? $voluntario?->telefone }}" />
                         <x-input name="whatsapp" label="Whatsapp" numeric="true"
-                            value="{{ old('whatsapp') ?? $voluntario->whatsapp }}" />
+                            value="{{ old('whatsapp') ?? $voluntario?->whatsapp }}" />
                     </div>
 
                     <x-bladewind::textarea required="true" name="descricao"
                         error_message="Escreva algo sobre você e seus serviços" show_error_inline="true" label="Descrição"
-                        selected_value="{{ old('descricao') ?? $voluntario->descricao }}" />
+                        selected_value="{{ old('descricao') ?? $voluntario?->descricao }}" />
                     <x-input-error name="descricao" />
 
                     <div class="text-center">
@@ -54,16 +54,16 @@
                     $estados = [['estado' => 'Paraná', 'sigla' => 'PR'], ['estado' => 'Rio Grande do Sul', 'sigla' => 'RS'], ['estado' => 'Santa Catarina', 'sigla' => 'SC']];
                     ?>
                     <x-bladewind::select name="estado" label_key="estado" value_key="sigla" placeholder="Estado"
-                        :data="$estados" selected_value="{{ old('estado') ?? $voluntario->estado }}" />
+                        :data="$estados" selected_value="{{ old('estado') ?? $voluntario?->estado }}" />
                     <x-input-error name="estado" />
                     <x-input name="cidade" label="Cidade" required="true"
-                        value="{{ old('cidade') ?? $voluntario->cidade }}" />
+                        value="{{ old('cidade') ?? $voluntario?->cidade }}" />
                     <x-input name="logradouro" label="Logradouro"
-                        value="{{ old('logradouro') ?? $voluntario->logradouro }}" />
-                    <x-input name="bairro" label="Bairro" value="{{ old('bairro') ?? $voluntario->bairro }}" />
-                    <x-input name="numero" label="Número" value="{{ old('numero') ?? $voluntario->numero }}" />
+                        value="{{ old('logradouro') ?? $voluntario?->logradouro }}" />
+                    <x-input name="bairro" label="Bairro" value="{{ old('bairro') ?? $voluntario?->bairro }}" />
+                    <x-input name="numero" label="Número" value="{{ old('numero') ?? $voluntario?->numero }}" />
                     <x-input name="complemento" label="Complemento"
-                        value="{{ old('complemento') ?? $voluntario->complemento }}" />
+                        value="{{ old('complemento') ?? $voluntario?->complemento }}" />
 
                     <div class="flex justify-between mt-3">
                         <x-bladewind::button name="btn-back" has_spinner="true" type="secondary" class="mr-2"
