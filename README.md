@@ -7,24 +7,15 @@
 - Node
 - concurrently (Opcional)
 
-## Import project
+## Importar Projeto
 ```bash
 git clone URL_PROJECT
 cd project
 composer install
 npm install
 ```
-## install concurrently
-```bash
-npm install -g concurrently
-```
 
-## Run project(com concurrently)
-```bash
-npm start
-```
-
-## Run project(sem concurrently)
+## Iniciar projeto
 - Terminal 1
 ```bash
 npm run dev
@@ -33,3 +24,16 @@ npm run dev
 ```bash
 php artisan serve
 ```
+
+
+##  (Opcional) Usar "concurrently"
+```bash
+npm install -g concurrently
+```
+Para Iniciar
+```bash
+npm start
+```
+
+
+
